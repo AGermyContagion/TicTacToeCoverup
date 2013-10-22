@@ -74,6 +74,22 @@ public class Player {
         return this.pieces;
     }
     
+    public String getPiece(int index) {
+        return this.pieces.get(index);
+    }
+    
+    public int getSmall() {
+        return this.smallPieces;
+    }
+    
+    public int getMedium() {
+        return this.mediumPieces;
+    }
+    
+    public int getLarge() {
+        return this.largePieces;
+    }
+    
     public ArrayList<Point> getMoves() {
         return this.moves;
     }
