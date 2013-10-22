@@ -6,17 +6,14 @@
 
 package tictactoe;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author Jeremy
  */
-public class Board {
-    private ArrayList<Spot> spots;
+class Spot {
+    Player player;
     
-    public Board() {
-        spots = new ArrayList<>(9);
+    public Spot() {
+        
     }
-    
 }

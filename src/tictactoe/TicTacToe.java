@@ -42,7 +42,7 @@ public class TicTacToe {
             player1 = new Player(name1, "O", 5, 1, 1);
             player2 = new Player(name2, "X", 5, 1, 1);
         }
-        System.out.println(player1.getName() + ":" + player1.getPieces() + ", " + player2.getName() + ":" +  player2.getPieces());
+        System.out.println(player1.toString() + " " + player2.toString());
     }
     
 }

@@ -14,6 +14,10 @@ public class Point {
     private int x;
     private int y;
     
+    @Override public String toString() {
+        return "(" + this.x + ", " + this.y + ") ";
+    }
+    
     public Point() {
         this.x = 0;
         this.y = 0;

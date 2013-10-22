@@ -20,6 +20,10 @@ public class Player {
     private ArrayList<String> pieces;
     private ArrayList<Point> moves;
     
+    @Override public String toString()  {
+        return this.name  + ":(" + this.pieces.get(2) + ": " + this.smallPieces + ", " + this.mediumPieces + ", " + this.largePieces + ", " +  this.moves + ")";
+    }
+    
     public Player() {
         this.name = "";
         this.smallPieces = 5;
