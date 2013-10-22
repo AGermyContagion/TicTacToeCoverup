@@ -23,11 +23,13 @@ public class Board {
     }
     
     public void printBoard() {
-        for (int i = 0; i < spots.size() - 1; i++) {
-            if (i % 3 == 0) {
+        for (int i = 0; i < spots.size() ; i++) {
+            if (i % 3 == 2) {
                 System.out.println(spots.get(i).getSymbol());
-            }else if (i % 3 == 2) {
-                System.out.println("|" + spots.get(i).getSymbol() + "|");
+            }else if (i % 3 == 1) {
+                System.out.print("|" + spots.get(i).getSymbol() + "|");
+            }else if (i % 3 == 0) {
+                System.out.print(spots.get(i).getSymbol());
             }
         }
     }
