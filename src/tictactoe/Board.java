@@ -22,6 +22,10 @@ public class Board {
         }
     }
     
+    public void changeSpot(Player p, String symbol, int index) {
+        this.spots.set(index, new Spot(p, symbol));
+    }
+    
     public void printBoard() {
         for (int i = 0; i < spots.size() ; i++) {
             if (i % 3 == 2) {
