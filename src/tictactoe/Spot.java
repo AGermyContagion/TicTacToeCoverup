@@ -11,9 +11,32 @@ package tictactoe;
  * @author Jeremy
  */
 class Spot {
-    Player player;
+    private String owner;
+    private String symbol;
     
     public Spot() {
-        
+        this.owner = "";
+        this.symbol = " "; // This is initialized as empty so that it will take up space if nobody is occupying the space
+    }
+    
+    public Spot(Player p, String symbol) {
+        this.owner = p.getName();
+        this.symbol = symbol;
+    }
+    
+    public String getOwner() {
+        return this.owner;
+    }
+    
+    public void setOwner(Player p) {
+        this.owner = p.getName();
+    }
+    
+    public String getSymbol() {
+        return this.symbol;
+    }
+    
+    public void setSymbol(Player p, String symbol) {
+        this.symbol = symbol;
     }
 }

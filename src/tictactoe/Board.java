@@ -16,7 +16,20 @@ public class Board {
     private ArrayList<Spot> spots;
     
     public Board() {
-        spots = new ArrayList<>(9);
+        spots = new ArrayList<>();
+        for (int i = 0; i < 9; i++) {
+            spots.add(new Spot());
+        }
+    }
+    
+    public void printBoard() {
+        for (int i = 0; i < spots.size() - 1; i++) {
+            if (i % 3 == 0) {
+                System.out.println(spots.get(i).getSymbol());
+            }else if (i % 3 == 2) {
+                System.out.println("|" + spots.get(i).getSymbol() + "|");
+            }
+        }
     }
     
 }
