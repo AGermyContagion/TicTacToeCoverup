@@ -11,25 +11,27 @@ package tictactoe;
  * @author Jeremy
  */
 class Spot {
-    private String owner;
+    private String name;
     private String symbol;
+    private Player owner;
     
     public Spot() {
-        this.owner = "";
+        this.name = "";
         this.symbol = " "; // This is initialized as empty so that it will take up space if nobody is occupying the space
     }
     
     public Spot(Player p, String symbol) {
-        this.owner = p.getName();
+        this.name = p.getName();
         this.symbol = symbol;
+        this.owner = p;
     }
     
-    public String getOwner() {
-        return this.owner;
+    public String getName() {
+        return this.name;
     }
     
-    public void setOwner(Player p) {
-        this.owner = p.getName();
+    public void setName(Player p) {
+        this.name = p.getName();
     }
     
     public String getSymbol() {
@@ -38,5 +40,9 @@ class Spot {
     
     public void setSymbol(Player p, String symbol) {
         this.symbol = symbol;
+    }
+    
+    public Player getOwner() {
+        return this.owner;
     }
 }

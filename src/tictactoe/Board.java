@@ -26,6 +26,10 @@ public class Board {
         this.spots.set(index, new Spot(p, symbol));
     }
     
+    public Spot getSpot(int index) {
+        return this.spots.get(index);
+    }
+    
     public void printBoard() {
         for (int i = 0; i < spots.size() ; i++) {
             if (i % 3 == 2) {
@@ -36,6 +40,14 @@ public class Board {
                 System.out.print(spots.get(i).getSymbol());
             }
         }
+    }
+    
+    public static boolean checkBoard(Board b) {
+        boolean result = false;
+        for (int i = 0; i < b.spots.size(); i++) {
+            
+        }
+        return result;
     }
     
 }

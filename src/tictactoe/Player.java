@@ -82,12 +82,24 @@ public class Player {
         return this.smallPieces;
     }
     
+    public boolean hasSmall() {
+        return this.smallPieces > 0;
+    }
+    
     public int getMedium() {
         return this.mediumPieces;
     }
     
+    public boolean hasMedium() {
+        return this.mediumPieces > 0;
+    }
+    
     public int getLarge() {
         return this.largePieces;
+    }
+    
+    public boolean hasLarge() {
+        return this.largePieces > 0;
     }
     
     public ArrayList<Point> getMoves() {

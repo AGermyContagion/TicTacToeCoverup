@@ -54,7 +54,39 @@ public class TicTacToe {
             location = in.nextInt();
             location = location - 1;
             System.out.println("\n");
-            board.changeSpot(players.get(currentPlayer), players.get(currentPlayer).getPieces().get(0), location);
+            if (board.getSpot(location).getOwner() == players.get(currentPlayer)) {
+                System.out.println("Cannot cover your own piece! Try again.");
+                continue;
+            } else {
+                if (board.getSpot(location).getOwner() == players.get(switchPlayer(players, currentPlayer))) {
+                    if (board.getSpot(location).getOwner().getPieces().indexOf( board.getSpot(location).getSymbol() ) == 0) {
+                        // IF THE SPOT HAS A LARGE PIECE ON IT
+                        if (players.get(currentPlayer).hasMedium()) {
+                            board.changeSpot(players.get(currentPlayer), players.get(currentPlayer).getPieces().get(1), location);
+                            players.get(currentPlayer).usedMedium();
+                        } else if (players.get(currentPlayer).hasLarge()) {
+                            board.changeSpot(players.get(currentPlayer), players.get(currentPlayer).getPieces().get(2), location);
+                            players.get(currentPlayer).usedLarge();
+                        } else {
+                            System.out.println("You don't have any medium or large pieces left! Try again.");
+                            continue;
+                        }
+                    } else if (board.getSpot(location).getOwner().getPieces().indexOf( board.getSpot(location).getSymbol() ) == 1) {
+                        // IF THE SPOT HAS A LARGE PIECE ON IT
+                        if (players.get(currentPlayer).hasLarge()) {
+                            board.changeSpot(players.get(currentPlayer), players.get(currentPlayer).getPieces().get(2), location);
+                            players.get(currentPlayer).usedLarge();
+                        } else {
+                            System.out.println("You don't have any lage pieces left! Try again.");
+                            continue;
+                        }
+                    }
+                } else {
+                    // IF THE SPOT IS EMPTY
+                    board.changeSpot(players.get(currentPlayer), players.get(currentPlayer).getPieces().get(0), location);
+                }
+                
+            }
             currentPlayer = switchPlayer(players, currentPlayer);
         }
     }
